@@ -9,11 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet var ImageViewDiceOne: UIImageView!
+    @IBOutlet var ImageViewDiceTwo: UIImageView!
+    
+    let DiceImages = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+    
+    
+    @IBAction func RollDices(_ sender: UIButton) {
+        ImageViewDiceOne.image = DiceImages.randomElement()
+        ImageViewDiceTwo.image = DiceImages.randomElement()
     }
-
-
 }
 
